@@ -1,0 +1,57 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Mon Ecole{% endblock %}
+
+{% block body %}
+
+<div class="adminPage">
+
+
+    <div class="row">
+        
+    <div  class="col-md-3"> {% include "shared/_sidebar.html.twig" %}</div>
+        
+       <div  class="col-md-9 divDroite">
+            <h2 class="text-center"> Listes des classe</h2>
+                        {# <h6>{{ lineClasses.idClasse.nom}}</h6> #}
+
+            <table >
+                <thead>
+                    <tr>
+                        <th>Nom de la classe</th>
+                        <th>Les eleves</th>
+          
+                    </tr>
+                </thead>
+ 
+                <tbody>
+                {% for lineClasse in lineClasses %}
+                    <tr>
+                    
+                        <td>{{ lineClasse.idClasse.nom }}</td>
+                        
+                        <td>{{ lineClasse.idEleve.firstName }} {{ lineClasse.idEleve.lastName }}</td>
+                    
+                    </tr>
+                {% endfor %}
+                </tbody>
+                
+            </table>
+            <div class="text-center">
+                <a href="{{ path('admin_classe_create')}}" class="btn mt-3">Ajouter une classe</a>
+            
+            </div>
+
+        </div>
+       
+    </div>
+
+    
+</div>
+
+
+   
+
+ 
+
+{% endblock %}

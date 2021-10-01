@@ -1,0 +1,31 @@
+#accueilProfs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.boxGlobalProfs {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.boxProfs {
+  background-color: floralwhite;
+  height: 150px;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+
+.boxProfs a {
+  text-decoration: none;
+  color: #aacc00;
+}
+
+.boxProfs a:hover {
+  font-size: 25px;
+}

@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+
+  {% if app.user %}
+        {# {% if is_granted('ROLE_ADMIN') %}
+          <a href="...">Delete</a>
+        {% endif %} #}
+
+   
+      {% if app.user.roles[0] is same as "ROLE_ADMIN" %}
+          {% include "admin/home_admin.html.twig" %}
+      {% elseif app.user.roles[0] is same as "ROLE_ELEVE" %}
+          {% include "eleve/home_eleve.html.twig" %}
+      {% elseif app.user.roles[0] is same as "ROLE_PROFESSEUR" %}
+          {% include "professeur/home_professeur.html.twig" %}
+
+      {% endif %}          
+       
+  {% else %}
+
+
+    <section class="s-home w-100">
+      <div>
+        <div class="div-home w-100 text-center">
+          <p>LOGO</p>
+                  <p>L’école primaire,est un ecole qu'il
+                      permet notamment l'apprentissage de la lecture, 
+                     de l'écriture et des bases de mathématiques.
+                     Les enfants entament leurs études primaires vers l’âge de 6 ans et les achèvent
+                     vers l’âge de 11 ans.</p>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <div>
+      <div class="para-home mb-4">
+                     <p>L’école primaire,est un ecole qu'il
+                     permet notamment l'apprentissage de la lecture, 
+                     de l'écriture et des bases de mathématiques.
+                     Les enfants entament leurs études primaires vers l’âge de 6 ans et les achèvent
+                     vers l’âge de 11 ans.</p>
+              </div>
+              <div class="p-home">
+                <div class="para2-home mb-4">
+                    <h4>Partager, travailler, communiquer</h4>
+                        <p>
+                                La plateforme qui renforce le lien Ecole-Famille,
+                                valorise les apprentissages et accompagne la vie de l’élève! 
+                                C’est simple, intuitif et sécurisé !
+                        </p>
+                </div>
+
+                <img src="images/para2.jpg" alt="">
+              </div>
+               <div class="p-home">
+                
+
+                 <img src="images/para3.jpg" alt="">
+                <div class="para2-home mb-4">
+                    <h4>Partager, valoriser, fédérer</h4>
+                        <p>
+                                 L’outil indispensable pour fédérer les familles
+                     autour des différentes actions que vous entreprenez
+                     . Pour une meilleure efficacité et un gain de temps ! 
+                     Simple, intuitif et sécurisé !
+                        </p>
+                </div>
+              </div>
+
+            
+
+           
+    </div>
+
+  {% endif %}
+
+
+
+{% endblock %}
+
+

@@ -1,0 +1,106 @@
+<div class=" sideBarAdmin versionDesktop">
+    
+{% if app.user %}
+    {% if app.user.roles[0] is same as "ROLE_ADMIN" %}
+    <div>
+        <h2>Administration</h2>
+    </div>
+    <div>
+        <a href="{{ path('accueil') }}">
+            <p class="mt-3">
+                <i class="fas fa-store"></i> Accueil
+            </p>
+        </a>
+    </div>
+     <section class="sect_admin">
+        <div class="affiche_admin"><a href="{{ path('list_users') }}">Afficher les utilisateur</a></div>
+
+         <div class="affiche_admin"><a href="{{ path('list_eleves') }}">Afficher les eleves</a></div>
+    
+        <div class="affiche_admin"><a href="{{ path('list_classes') }}">Afficher les classes</a></div>
+    
+
+        <div class="affiche_admin"><a href="{{ path('form_email') }}">Envoyer un message</a></div>
+    </section>
+{% elseif app.user.roles[0] is same as "ROLE_PROFESSEUR"   %}
+    <div>
+        <h2>Administration</h2>
+    </div>
+    <div>
+        <a href="{{ path('accueil') }}">
+            <p class="mt-3">
+                <i class="fas fa-store"></i> Accueil
+            </p>
+        </a>
+    </div>
+    <div>
+        <a href="{{ path('prof_notes_create') }}">
+            <p class="mt-3">
+                Ajouter des notes
+            </p>
+        </a>
+    </div>
+
+    <div class="affiche_eleve text-center">
+        <a href="{{ path('update_infos_prof',{'id' : app.user.id }) }}">
+            Mes informations Personnelles
+        </a>
+    </div>
+
+    
+    <div>
+        <a href="{{ path('prof_show') }}">
+            <p class="mt-3">
+                Mes Eleves
+            </p>
+        </a>
+    </div>
+
+
+{% elseif app.user.roles[0] is same as "ROLE_ELEVE" %} 
+    <div>
+        <h1>Eleve</h1>
+    </div>
+    <div>
+        <a href="{{ path('accueil') }}">
+            <p class="mt-3">
+                <i class="fas fa-store"></i> Accueil
+            </p>
+        </a>
+    </div>
+    <section class="sect_eleve">
+        <div class="affiche_eleve text-center">
+            <a href="{{ path('update_infos_eleve',{'id' : app.user.id }) }}">
+                Mes informations Personnelles
+            </a>
+        </div>
+
+        <div class="affiche_eleve">
+            <a href="{{ path('eleve_planning') }}">
+                Afficher mes planning
+            </a>
+        </div>
+        <div class="affiche_eleve">
+            <a href="{{ path('mes_notes',{'id' : app.user.id }) }}">
+                Afficher mes notes
+            </a>
+        </div>
+
+    </section>
+    
+
+
+{% else %}
+    <div>
+        <a href="{{ path('public_home') }}">
+            <p class="mt-3">
+                 Retour
+            </p>
+        </a>
+    </div> 
+{% endif %}
+
+
+{% endif %}
+
+</div>

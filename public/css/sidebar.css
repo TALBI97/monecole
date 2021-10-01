@@ -1,0 +1,60 @@
+.sideBarAdmin {
+  border-right: 2px solid lightgrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sideBarAdmin a {
+  text-decoration: none;
+  color: #aacc00;
+}
+
+.sideBarAdmin a:hover {
+  color: #007f5f;
+}
+.affiche_admin,
+.affiche_eleve {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 20px;
+  opacity: 0.8;
+}
+
+.affiche_admin:hover,
+.affiche_eleve:hover {
+  opacity: 1;
+}
+
+.affiche_admin:hover a,
+.affiche_eleve:hover a {
+  font-size: 17px;
+}
+
+.affiche_admin:first-child {
+  background: url("../images/users.jpg") no-repeat center/cover;
+}
+
+.affiche_admin:nth-child(2) {
+  background: url("../images/image6.jpg") no-repeat center/cover;
+}
+
+.affiche_admin:nth-child(3) {
+  background: url("../images/notes.jpeg") no-repeat center/cover;
+}
+
+.affiche_eleve:first-child {
+  background: url("../images/profilUnique.jpg") no-repeat center/cover;
+}
+
+.affiche_eleve:nth-child(2) {
+  background: url("../images/image6.jpg") no-repeat center/cover;
+}
+
+.affiche_eleve:nth-child(3) {
+  background: url("../images/notes.jpeg") no-repeat center/cover;
+}

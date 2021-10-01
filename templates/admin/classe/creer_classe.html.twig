@@ -1,0 +1,51 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Ajouter Classe{% endblock %}
+
+{% block body %}
+
+   <div class="row">
+        
+        <div  class="col-md-3"> {% include "shared/_sidebar.html.twig" %}</div>
+        
+        <div  class="col-md-9">{% include "shared/_messages_flash.html.twig" %}
+
+            <div class="container pt-5 pb-5 main">
+                <div class="row ">
+                    <div class="col-12">
+                        <h1 class="text-center">Ajouter une classe</h1>
+                    </div>
+                    <div class="col-12">
+                        <div class="card formulaire">
+                            <div class="card-header">
+                                <h3>Formulaire de creation</h3>
+                            </div>
+                            <div class="card-body">
+                                {{ form_start(form) }}
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        {{form_row(form.nom)}}
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        {{form_row(form.instituteur)}}
+                                    </div>
+                                </div>
+                                <button class="btn  mt-3">
+                                    Ajouter
+                                </button>
+
+                                {{ form_end(form) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+       
+    </div>
+
+
+
+
+{% endblock %}
+

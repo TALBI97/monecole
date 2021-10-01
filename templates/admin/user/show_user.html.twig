@@ -1,0 +1,55 @@
+{% extends "base.html.twig" %}
+{% block title %}utlisateur:{{user.firstName}}{% endblock %}
+
+{% block body %}
+
+
+    <div class="row">
+        
+        <div  class="col-md-3"> {% include "shared/_sidebar.html.twig" %}</div>
+        
+        <div  class="col-md-9">
+            
+            <div class=" card pt-5  mt-4 formulaire" style="">
+                <div class="card-head ">
+                    <h3 class="">Nom Prenom : {{ user.firstName }} {{ user.lastName }}</h3>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex align-items-center imageTable">
+                        {% if user.imageUrl is same as null %}
+                            <img src="{{ asset('images/defaut.jpg') }}" alt="image utilisateur" />
+                        {% else %}
+                            <img src="{{ asset( user.imageUrl ) }}" alt="image utilisateur" />
+                        {% endif %}
+                    </div>
+
+                    <p class="center">Email :{{ user.email }}</p>
+                    <p class="center">Née le : {{ user.datenaiss | date('d-m-Y')  }}</p>
+                    <p class="center">Sexe : {{ user.civilite }}</p>
+                    <p class="center">Adresse :  {{ user.street }} <br> {{ user.postalCode }} {{ user.city }}</p>
+                    <p class="center">Role :  {{ user.roles[0] }}</p>
+                    {# <p class="center">classe :  {{ user.classes.id }}</p> #}
+                </div>
+    
+                <div class="card-body">
+                    {% if app.user.roles[0] is same as "ROLE_ADMIN"  %}
+                        {# <a href="#" class="btn btn-lg btn-link mt-3">Modifier le user</a> #}
+                        <a href="{{ path('admin_user_role_eleve',{'id' : user.id }) }}" class="btn btn-sm mt-3">Assigner rôle : eleve</a>
+                        <a href="{{ path('admin_user_role_professeur',{'id' : user.id }) }}" class="btn btn-sm mt-3">Assigner rôle : professeur</a>
+                    {% endif %}
+                </div>
+                        <a href="{{ path('update_user',{'id' : user.id }) }}" class="btn btn-sm mt-3">Modifier l'utilisateur</a>
+
+            </div>
+            
+        </div>
+       
+    </div>
+
+
+
+
+
+
+    
+{% endblock %}

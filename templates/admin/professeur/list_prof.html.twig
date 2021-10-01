@@ -1,0 +1,69 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Liste professeurs{% endblock %}
+
+{% block body %}
+
+
+<div class="adminPage">
+
+    <div class="row">
+        <div class="menuTopAdmin">
+            <div class="col-12">
+                <h1>Administration</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row divHomePageAdmin">
+        {% include "shared/_sidebar.html.twig" %}
+        <div class="col-9 mt-4">
+            {% include "shared/_messages_flash.html.twig" %}
+            <div class="col-12">
+
+            <h2> Les professeurs</h2>
+                <table class="col-9 mt-4" >
+                        <thead>
+                            <tr>
+                                    <th>prenom</th>
+                                    <th>nom</th>
+                                    <th>date de naissance</th>
+                                    <th>sexe</th>
+                                    <th>email</th>
+                                    {# <th>action</th> #}
+                            </tr>
+                        </thead>
+                
+
+            
+                    <tbody>
+                    {% for user in users %}
+                        {% if user.roles[0] is same as "ROLE_PROFESSEUR"  %}
+                        <tr>
+                        
+                            <td>{{ user.lastName }}</td>
+                            <td>{{ user.firstName }}</td>
+                            <td>{{ user.dateNaissance  | date('d-m-Y') }}</td>
+                            <td>{{ user.civilite }}</td>
+                            <td>{{ user.email }}</td>
+                            <td class=" btnConsulter text-center "><a href="{{ path('prof_show',{ 'id' : user.id }) }}" class="">Consulter</a></td>
+                        
+                        </tr>
+                        {% endif %}
+                    
+                    {% endfor %}
+                    </tbody>
+                
+                </table>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+
+   
+
+ 
+
+{% endblock %}

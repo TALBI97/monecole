@@ -1,0 +1,104 @@
+<nav class="navbar navbar-expand-lg" id="navbar1">
+  <a class="navbar-brand" href="/accueil"><img src="images/logo.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ms-auto" >
+        {% if app.user %}
+          {% if app.user.roles[0] is same as "ROLE_ADMIN" %}
+            
+            <li class="nav-item">
+              <a class="lien" href="{{ path('app_register') }}">Creer un compte</a>
+            </li>
+            <li class="nav-item">
+              <a class="lien" href="{{ path('admin_classe_create') }}">Creer une classe</a>
+            </li>
+             <li class="nav-item">
+              <a class="lien" href="{{ path('admin_classe_Eleve_create') }}">Ajouter un eleve</a>
+            </li>
+
+            
+            <li class="nav-item">
+              <a class="lien" href="{{ path('public_home') }}">Espace admin</a>
+            </li>
+          {% elseif app.user.roles[0] is same as "ROLE_ELEVE" %}
+            <li class="nav-item">
+              <a class="lien" href="#">Espace eleves</a>
+            </li>
+          {% elseif app.user.roles[0] is same as "ROLE_PROFESSEUR" %}
+            <li class="nav-item">
+                  <a class="lien" href="{{ path('prof_show') }}">Espace professeur</a>
+            </li>
+          
+          {% endif %}
+      
+          <li class="nav-item cnxDcnx">
+              <a class="lien" href="{{ path('app_logout') }}">Déconnexion</a>
+          </li>
+       
+           
+        {% else %}
+            <li class="nav-item cnxDcnx">
+              <a class="lien" href="{{ path('app_login') }}">Connexion</a>
+            </li>
+        
+        {% endif %}
+      </ul>
+  </div>
+</nav>
+
+
+{# <nav class="navbar navbar-expand-lg" id="navbar1">
+  <div class="container-fluid">
+ 
+     <a class="navbar-brand" href="#">Mon Ecole Primaire</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+ 
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        {% if app.user %}
+          {% if app.user.roles[0] is same as "ROLE_ADMIN" %}
+            
+            <li class="nav-item">
+              <a class="lien" href="{{ path('app_register') }}">Creer un compte</a>
+            </li>
+            <li class="nav-item">
+              <a class="lien" href="{{ path('admin_classe_create') }}">Creer une classe</a>
+            </li>
+             <li class="nav-item">
+              <a class="lien" href="{{ path('admin_classe_Eleve_create') }}">Ajouter un eleve</a>
+            </li>
+
+            
+            <li class="nav-item">
+              <a class="lien" href="{{ path('public_home') }}">Espace admin</a>
+            </li>
+          {% elseif app.user.roles[0] is same as "ROLE_ELEVE" %}
+            <li class="nav-item">
+              <a class="lien" href="#">Espace eleves</a>
+            </li>
+          {% elseif app.user.roles[0] is same as "ROLE_PROFESSEUR" %}
+            <li class="nav-item">
+                  <a class="lien" href="{{ path('prof_show') }}">Espace professeur</a>
+            </li>
+          
+          {% endif %}
+      
+          <li class="nav-item cnxDcnx">
+              <a class="lien" href="{{ path('app_logout') }}">Déconnexion</a>
+          </li>
+       
+           
+        {% else %}
+            <li class="nav-item cnxDcnx">
+              <a class="lien" href="{{ path('app_login') }}">Connexion</a>
+            </li>
+        
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav> #}

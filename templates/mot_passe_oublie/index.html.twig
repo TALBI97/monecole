@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+ {# <section class="s-home">
+    <div class="div-home ">
+        <div class="card formulaire   ">
+                <div class="card-header">
+                   <h3 class=" font-weight-normal">Connexion</h3>
+                </div>
+             
+                  {% for message in app.flashes('notice') %}
+        
+                    <div class='alert alert-info'>{{message}}</div>
+                  {% endfor %}
+            
+                 <div >
+              
+                <label for="inputEmail">Votre email :</label>
+                <input type="email" value="" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+              
+                <button class="btn btn-lg mt-3 " type="submit">
+                    Valider
+                </button>
+                <hr>
+
+                <p>Ou souhaitez vous de <a href="{{path('app_login')}}"> se connecter</a>?</p>
+          
+        </div>
+                   
+
+                    
+        </div>
+
+    </div>
+        
+  </section> #}
+
+
+
+
+
+
+  <section class="s-home">
+    <form method="post" class="div-home formulaire">
+        {% for message in app.flashes('notice') %}
+        
+        <div class='alert alert-info'>{{message}}</div>
+        {% endfor %} 
+        {# <div class="div-home-oublie">
+            <p>LOGO</p>
+            <p class="p-home">L'extranet du Mon Ecole</p>
+        </div> #}
+        <div >
+              <div >
+                    <h3 class=" font-weight-normal">Connexion</h3>
+              </div>
+                <label for="inputEmail">Votre email :</label>
+                <input type="email" value="" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+              
+                <button class="btn btn-lg mt-3 " type="submit">
+                    Valider
+                </button>
+                <hr>
+
+                <p>Ou souhaitez vous de <a href="{{path('app_login')}}"> se connecter</a>?</p>
+          
+        </div>
+    </form>
+  </section>
+
+
+{% endblock %}
+

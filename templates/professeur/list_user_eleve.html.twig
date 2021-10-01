@@ -1,0 +1,147 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Ajouter Classe{% endblock %}
+
+{% block body %}
+
+   <div class="row">
+        
+        <div  class="col-md-3"> {% include "shared/_sidebar.html.twig" %}</div>
+        
+        <div  class="col-md-9">{% include "shared/_messages_flash.html.twig" %}
+
+            <div class="container pt-5 pb-5 main">
+                <div class="row ">
+                    <div class="col-12">
+                        <h1 class="text-center">Mes eleves</h1>
+                    </div>
+                    <div class="col-12">
+                        <div class="card formulaire">
+                                    
+                            <div class="card-body container">
+                    
+                                <div class="card-header">
+                                    <h2 class="text-center">Professeur {{ classe.instituteur.firstName }} {{ classe.instituteur.lastName }}</h2>
+                                </div>
+                                <div class="card-body">
+                                
+                                    <h4 class="card-text text-center">Classe {{ classe.nom }}</h4>
+                                    <strong class="card-title">Mes eleves </strong>
+                                    <p class="card-text">
+                                        <ul class="d-flex justify-content-around">
+                                        {% for eleve in classe.lineClassEleves %}
+                                                
+                                           
+                                                <li>{{ eleve.idEleve.firstName }} {{ eleve.idEleve.lastName }}</li>
+
+                                                <li class=" text-center "><a href="{{ path('eleve_show',{ 'id' :eleve.idEleve.id }) }}" class=""><i class="fas fa-info-circle"></i></a></li>
+                                          
+
+
+                                        {% endfor %}
+                                        </ul>
+                                    </p> 
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{# 
+{% extends "base.html.twig" %}
+
+{% block title %}Mon blog{% endblock %}
+
+{% block body %}
+{% include "shared/_sidebar.html.twig" %}
+
+
+   
+   
+ <div class="row divHomePageAdmin">
+        {% include "shared/_sidebar.html.twig" %}
+        <div class="col-9 mt-4">
+            {% include "shared/_messages_flash.html.twig" %}
+            <div class="col-12">
+                
+                <div class="card container">
+            
+                    <div class="card-header">
+                        <h2 class="text-center">Professeur {{ classe.instituteur.firstName }} {{ classe.instituteur.lastName }}</h2>
+                    </div>
+                    <div class="card-body">
+                       
+                        <h4 class="card-text text-center">Classe {{ classe.nom }}</h4>
+                         <strong class="card-title">Mes eleves </strong>
+                        <p class="card-text">
+                            <ul>
+                            {% for eleve in classe.lineClassEleves %}
+                                    
+                                <li>{{ eleve.idEleve.firstName }} {{ eleve.idEleve.lastName }}</li>
+
+                            {% endfor %}
+                            </ul>
+                        </p> 
+                    </div>
+                </div> 
+              
+            </div>
+        
+        </div>
+    </div> 
+
+{% endblock %} #}

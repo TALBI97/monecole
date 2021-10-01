@@ -1,0 +1,66 @@
+/* .slideAccueil {
+  background-color: red;
+  width: 700px;
+  max-height: 100px;
+} */
+
+.sect2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.box {
+  width: 35%;
+  margin: 20px;
+  background: floralwhite;
+  padding-bottom: 10px;
+}
+
+.box h5,
+h6 {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  background: #c5d7bd;
+  padding-left: 10px;
+  color: white;
+  font-size: 15px;
+}
+
+.box h5 {
+  background: transparent;
+  color: black;
+}
+
+.box p {
+  font-size: 15px;
+  padding-left: 8px;
+}
+
+.box a {
+  color: #007580;
+  text-decoration: underline;
+}
+
+.box a:hover {
+  color: #c5d7bd;
+  transition: 0.2s all ease-in;
+}
+
+.box table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.tableauPlan {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.table-plan {
+  width: 33%;
+  margin: 40px;
+}

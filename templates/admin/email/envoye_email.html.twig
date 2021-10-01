@@ -1,0 +1,102 @@
+{# {% extends "base.html.twig" %}
+
+{% block body %}
+{% include "shared/_messages_flash.html.twig" %}
+ 
+    <div class="container card-body">
+
+        {{ form_start(form) }}
+            <div class="row">
+                
+                <div class="col-12 ">
+                    {{ form_row(form.instituteur) }}
+                </div>
+                <div class="col-12 ">
+                    {{ form_row(form.message) }}
+                </div>
+                    
+            </div> 
+            <button class="btn btn-primary mt-3" type="submit">
+                Envoyer
+        </button>
+
+            {{ form_end(form) }}
+    </div>
+
+
+{% endblock %} #}
+
+
+
+
+
+{% extends "base.html.twig" %}
+
+{% block title %}Mon Ecole{% endblock %}
+
+{% block body %}
+
+<div class="adminPage">
+    <div class="row">
+        
+       <div  class="col-md-3"> {% include "shared/_sidebar.html.twig" %}</div>
+        
+       <div  class="col-md-9">
+            {% include "shared/_messages_flash.html.twig" %}
+
+            <h4 class="text-center"> Envoyer un message aux professeurs</h4>
+                {{ form_start(form) }}
+                <div class="row">
+                
+                    <div class="col-12 ">
+                        {{ form_row(form.instituteur) }}
+                    </div>
+                    <div class="col-12 ">
+                        {{ form_row(form.message) }}
+                    </div>
+                    
+                </div> 
+                <button class="btn mt-3" type="submit"> Envoyer  </button>
+
+                {{ form_end(form) }}
+        </div>
+       
+    </div>
+       
+{# 
+
+    <div class="row divHomePageAdmin">
+        {% include "shared/_sidebar.html.twig" %}
+        <div class="col-9 mt-4">
+            {% include "shared/_messages_flash.html.twig" %}
+            <div class="col-12">
+
+            <h4 class="text-center"> Envoyer un message aux professeurs</h4>
+                    {{ form_start(form) }}
+            <div class="row">
+                
+                <div class="col-12 ">
+                    {{ form_row(form.instituteur) }}
+                </div>
+                <div class="col-12 ">
+                    {{ form_row(form.message) }}
+                </div>
+                    
+            </div> 
+            <button class="btn btn-primary mt-3" type="submit">
+                Envoyer
+        </button>
+
+            {{ form_end(form) }}
+            </div>
+        
+        </div>
+    </div> #}
+</div>
+
+
+   
+
+ 
+
+{% endblock %}

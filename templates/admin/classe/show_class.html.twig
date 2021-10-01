@@ -1,0 +1,196 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Ajouter un eleve{% endblock %}
+
+{% block body %}
+
+   <div class="row">
+        
+        <div  class="col-md-3"> {% include "shared/_sidebar.html.twig" %}</div>
+        
+        <div  class="col-md-9">{% include "shared/_messages_flash.html.twig" %}
+
+            <div class="container pt-5 pb-5 main">
+                <div class="row ">
+                    <div class="card-head text-center">
+                        <h5>Nom de professeur: {{ classe.instituteur.firstName }} {{ classe.instituteur.lastName }}</h5>
+                        <h5>Nom de classe: {{ classe.nom }}</h5>
+                    </div>  
+                    <div class="col-12">
+                        <div class="card formulaire">
+                            <div class="card-header">
+                                <h3>Formulaire de creation</h3>
+                            </div>
+                            <div class="card-body">
+                               
+                                <table class="table table-hover" >
+                                    <thead>
+                                        <tr>
+                                            <th>Nom d'eleve</th> 
+                                        </tr>
+                                    </thead>
+                            
+                                    <tbody>
+                                    
+                                    {% for eleve in classe.lineClassEleves %}
+                                        <tr style="background:white">
+                                            
+                                            <td><p>{{ eleve.idEleve.firstName }} {{ eleve.idEleve.lastName }}</p></td>
+                                            
+                                        </tr>
+                                    {% endfor %}
+                                    
+                                        
+                                    </tbody>
+                            
+                                </table>
+                            </div>
+
+                             <div class="card-footer">
+                                {% if app.user.roles[0] is same as "ROLE_ADMIN"  %}
+                                    <a href="{{ path('eleve_create',{ 'id' : classe.id }) }}" class="btn">Ajouter un eleve</a>
+                                    <a href="{{ path('class_edit',{ 'id' : classe.id }) }}" class="btn">Modifier la classe</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+       
+    </div>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{# {% extends "base.html.twig" %}
+{% block title %}{% endblock %}
+
+{% block body %}
+
+<div class="container card pt-5 pb-5 mt-4 card shadow rounder text-center" style="">
+    <div class="card-head ">
+        <h3>Nom de professeur: {{ classe.instituteur.firstName }} {{ classe.instituteur.lastName }}</h3>
+        <h3>Nom de classe: {{ classe.nom }}</h3>
+    </div>
+    <div class="card-body">
+         
+       <div class="card-body">
+
+                    <table class="table table-hover" >
+                        <thead>
+                            <tr>
+                                <th>Nom d'eleve</th> 
+                            </tr>
+                        </thead>
+                
+                        <tbody>
+                       
+                    {% for eleve in classe.lineClassEleves %}
+                        <tr style="background:white">
+                            
+                            <td><p>{{ eleve.idEleve.firstName }} {{ eleve.idEleve.lastName }}</p></td>
+                            
+                        </tr>
+                    {% endfor %}
+                    
+                        
+                    </tbody>
+                
+                </table>
+                </div>             
+                
+    </div>
+ 
+    <div class="card-body">
+        {% if app.user.roles[0] is same as "ROLE_ADMIN"  %}
+            <a href="{{ path('eleve_create') }}" class="btn">Ajouter un eleve</a>
+             <a href="{{ path('class_edit',{ 'id' : classe.id }) }}" class="btn">Modifier la classe</a>
+        {% endif %}
+    </div>
+</div> #}
+    {# <div class="container pt-5 pb-5">
+        <div class="row">
+            <div class="col-6">
+             <div class="card shadow rounder text-center ">
+                <h3>Nom de professeur: {{ classe.instituteur.firstName }} {{ classe.instituteur.lastName }}</h3>
+                <h3>Nom de classe: {{ classe.nom }}</h3>
+             </div>
+                <div class="card shadow rounder text-center mt-3">
+                <div class="card-header">
+                    <h5>Liste des eleves</h5>
+                </div>
+
+                <div class="card-body">
+
+                    <table class="table table-hover" >
+                        <thead>
+                            <tr>
+                                <th>Nom d'eleve</th> 
+                            </tr>
+                        </thead>
+                
+                        <tbody>
+                       
+                    {% for eleve in classe.lineClassEleves %}
+                        <tr>
+                            
+                            <td><p>{{ eleve.idEleve.firstName }} {{ eleve.idEleve.lastName }}</p></td>
+                            
+                        </tr>
+                    {% endfor %}
+                    
+                        
+                    </tbody>
+                
+                </table>
+                </div>             
+
+                </div>
+            
+            </div>
+
+             <a href="{{ path('eleve_create') }}" class="btn">Ajouter un eleve</a>
+             <a href="{{ path('class_edit',{ 'id' : classe.id }) }}" class="btn">Modifier la classe</a>
+        </div>
+    </div> #}
+{# {% endblock %} #}

@@ -1,0 +1,117 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Mon blog{% endblock %}
+
+{% block body %}
+
+<div class="adminPage">
+
+    <div class="row">
+        
+       <div  class="col-md-3"> {% include "shared/_sidebar.html.twig" %}</div>
+        
+       <div  class="col-md-9 divDroite"> 
+       <h2 class="text-center"> Les utilisateurs</h2>
+            <table class="col-9 mt-4" >
+                <thead>
+                    <tr>
+                        <th>Prenom</th>
+                        <th>Nom</th>
+                        <th>Date de naissance</th>
+                        <th>Sexe</th>
+                        <th>Email</th>
+                        <th>Roles</th>
+                        <th>Action</th>
+                </tr>
+                </thead>
+            
+                <tbody>
+                    <h5>{{users.getTotalItemCount}} Utilisateurs</h5>
+                    {% for user in users %}
+                        <tr>
+                        
+                            <td>{{ user.lastName }}</td>
+                            <td>{{ user.firstName }}</td>
+                            <td>{{ user.datenaiss  | date('d-m-Y') }}</td>
+                            <td>{{ user.civilite }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.roles[0] }}</td>
+                            <td class="text-center" >
+                                <a href="{{ path('user_show',{ 'id' : user.id }) }}" class=""><i class="fas fa-info-circle"></i>
+                                </a>
+                            </td>
+                            <td class="text-center" >
+                                <a href="{{ path('delete_user',{ 'id' : user.id }) }}" class=""><i class="far fa-trash-alt"></i>
+                                </a>
+                            </td>
+                        
+                        </tr>
+                    {% endfor %}
+                    {{ knp_pagination_render(users) }}
+
+                </tbody>
+                
+            </table>
+            <div class="text-center">
+                <a href="{{ path('app_register')}}" class="btn mt-3">Ajouter un utilisateur</a>
+            
+            </div>
+        </div>
+       
+    </div>
+
+
+{# 
+
+    <div class="row divHomePageAdmin">
+        {% include "shared/_sidebar.html.twig" %}
+        <div class="col-9 mt-4">
+            {% include "shared/_messages_flash.html.twig" %}
+            <div class="col-12">
+
+            <h2 class="text-center"> Les utilisateurs</h2>
+                <table class="col-9 mt-4" >
+                    <thead>
+                        <tr>
+                                <th>Prenom</th>
+                                <th>Nom</th>
+                                <th>Date de naissance</th>
+                                <th>Sexe</th>
+                                <th>Email</th>
+                                <th>Roles</th>
+                                <th>Action</th>
+                        </tr>
+                    </thead>
+            
+                    <tbody>
+                    <h5>{{users.getTotalItemCount}} Utilisateurs</h5>
+                    {% for user in users %}
+                        <tr>
+                        
+                            <td>{{ user.lastName }}</td>
+                            <td>{{ user.firstName }}</td>
+                            <td>{{ user.dateNaissance  | date('d-m-Y') }}</td>
+                            <td>{{ user.civilite }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.roles[0] }}</td>
+                            <td class="text-center" ><a href="{{ path('user_show',{ 'id' : user.id }) }}" class="btn-link" style="color:#007580">Consulter</a></td>
+                        
+                        </tr>
+                    {% endfor %}
+                    {{ knp_pagination_render(users) }}
+
+                    </tbody>
+                
+                </table>
+            </div>
+        
+        </div>
+    </div> #}
+</div>
+
+
+   
+
+ 
+
+{% endblock %}

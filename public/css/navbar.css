@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#navbar1 ul {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+#navbar1 {
+  border-bottom: 1px solid lightgrey;
+  /* background-color: #f8f5f1; */
+}
+a,
+.nav-item {
+  color: grey;
+  text-decoration: none;
+  padding: 5px;
+}
+
+a:hover {
+  color: #aacc00;
+}
+
+.cnxDcnx {
+  border: 2px solid #aacc00;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.card-header {
+  background-color: #aacc00;
+}

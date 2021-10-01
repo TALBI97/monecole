@@ -1,0 +1,96 @@
+/* .affiche_admin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 20px;
+  opacity: 0.8;
+}
+
+.affiche_admin:hover {
+  opacity: 1;
+}
+
+.affiche_admin:hover a {
+  font-size: 17px;
+}
+
+.affiche_admin:first-child {
+  background: url("../images/users.jpg") no-repeat center/cover;
+}
+
+.affiche_admin:nth-child(2) {
+  background: url("../images/image6.jpg") no-repeat center/cover;
+}
+
+.affiche_admin:nth-child(3) {
+  background: url("../images/notes.jpeg") no-repeat center/cover;
+} */
+
+.formulaire {
+  background: linear-gradient(to right, #ffffeb, rgba(160, 159, 159, 0.425));
+
+  border-radius: 20px;
+  padding: 20px;
+  margin-right: 40px;
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.divDroite {
+  margin: 40px auto;
+}
+table {
+  background: linear-gradient(to right, #ffffeb, rgba(160, 159, 159, 0.425));
+
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  border-collapse: collapse;
+  width: 70%;
+  padding: 40px;
+  text-align: center;
+  margin: 0 auto;
+
+  /* color: grey; */
+}
+table thead tr {
+  height: 40px;
+  color: gray;
+}
+table tr th {
+  background: #f8f5f1;
+}
+
+table td {
+  border: 1px solid #effbdb;
+  height: 40px;
+  width: 120px;
+  color: #13575e;
+}
+table tr:nth-child(2n) {
+  background: #effbdb;
+}
+table tr:nth-child(2n + 1) {
+  background: #ffffff;
+}
+
+table tr:nth-child(2n) td {
+  border-right: 1px solid #d8ebe4;
+}
+table th {
+  width: 150px;
+  font-family: "Lemonada", cursive;
+}
+
+.imageTable img {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+  /* border-radius: 20%; */
+}
+
+.imageTable p {
+  margin: 0;
+  margin-left: 20px;
+}

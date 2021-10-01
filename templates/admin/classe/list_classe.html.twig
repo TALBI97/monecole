@@ -1,0 +1,93 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Mon Ecole{% endblock %}
+
+{% block body %}
+
+<div class="adminPage">
+
+
+    <div class="row">
+        
+    <div  class="col-md-3"> {% include "shared/_sidebar.html.twig" %}</div>
+        
+       <div  class="col-md-9 divDroite">
+            <h2 class="text-center"> Les classes</h2>
+            <table >
+                <thead>
+                    <tr>
+                        <th>Nom de la classe</th>
+                        <th>Le professeur</th>
+                        <th>Action</th>
+                        <th></th>
+                    </tr>
+                </thead>
+ 
+                <tbody>
+                {% for classe in classes %}
+                    <tr>
+                    
+                        <td>{{ classe.nom }}</td>
+                        <td>{{ classe.instituteur.firstName }} {{ classe.instituteur.lastName }}</td>
+                        
+                        <td class=" text-center "><a href="{{ path('class_show',{ 'id' : classe.id }) }}" class=""><i class="fas fa-info-circle"></i></a></td>
+                        <td class=" text-center "><a href="{{ path('class_delete',{ 'id' : classe.id }) }}" class=""><i class="far fa-trash-alt"></i></a></td>
+                    
+                    </tr>
+                {% endfor %}
+                </tbody>
+                
+            </table>
+            <div class="text-center">
+                <a href="{{ path('admin_classe_create')}}" class="btn mt-3">Ajouter une classe</a>
+            
+            </div>
+
+        </div>
+       
+    </div>
+
+    {# <div class="row divHomePageAdmin">
+        {% include "shared/_sidebar.html.twig" %}
+        <div class="col-9 mt-4">
+            {% include "shared/_messages_flash.html.twig" %}
+            <div class="col-12">
+
+            <h2 class="text-center"> Les classes</h2>
+                <table class="col-9 mt-4" >
+                        <thead>
+                            <tr>
+                                <th>Nom de la classe</th>
+                                <th>Le professeur</th>
+                                <th>Action</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+ 
+                    <tbody>
+                    {% for classe in classes %}
+                        <tr>
+                        
+                            <td>{{ classe.nom }}</td>
+                            <td>{{ classe.instituteur.firstName }} {{ classe.instituteur.lastName }}</td>
+                           
+                            <td class=" text-center "><a href="{{ path('class_show',{ 'id' : classe.id }) }}" class="btnConsulter">Consulter</a></td>
+                            <td class=" text-center "><a href="{{ path('class_delete',{ 'id' : classe.id }) }}" class="btnSupprimer">Supprimer</a></td>
+                        
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                
+                </table>
+            </div>
+        
+        </div>
+    </div> #}
+</div>
+
+
+   
+
+ 
+
+{% endblock %}
