@@ -34,3 +34,7 @@ a:hover {
 .card-header {
   background-color: #aacc00;
 }
+
+#logo {
+  width: 150px;
+}

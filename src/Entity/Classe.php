@@ -27,7 +27,6 @@ class Classe
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="classes")
      * @ORM\JoinColumn(onDelete="CASCADE")
-
      */
     private $instituteur;
 

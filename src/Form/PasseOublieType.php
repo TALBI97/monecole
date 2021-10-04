@@ -30,10 +30,7 @@ class PasseOublieType extends AbstractType
             ])
             ->add('submit',SubmitType::class,[
                 'label'=>"Valider",
-                'attr'=>['style'=>'border:1px solid #aacc00'],
-                
-                
-                    
+                'attr'=>['style'=>'border:1px solid #aacc00'],              
             ])
         ;
     }

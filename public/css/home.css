@@ -100,7 +100,6 @@ body {
 #formCnx,
 #formPasseOublie {
   background: linear-gradient(to right, #ffffeb, rgba(160, 159, 159, 0.425));
-
   border-radius: 20px;
   padding: 20px;
   margin-right: 40px;
@@ -171,4 +170,8 @@ h3 {
 .btn:hover {
   font-size: 16px;
   color: #c5d7bd;
+}
+.divLogo {
+  /* background-color: red; */
+  /* background: linear-gradient(to right, #ffebcd, #faf0e6); */
 }
