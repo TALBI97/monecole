@@ -19,18 +19,14 @@ class UpdateUserController extends AbstractController
     /**
      * @Route("admin/user/update/{id}", name="update_user")
      */
-
-   
     public function index(int $id, Request $request, EntityManagerInterface $em, UserRepository $userRepository): Response
     {
         $user = $userRepository->find($id);
-
         $form = $this->createForm(RegistrationFormType::class, $user);
 
         if(!$user)
         {
             $this->addFlash('warning','cette utilisateur n\'existe pas');
-   
              return $this->redirectToRoute('list_users');
         }
 
@@ -38,15 +34,9 @@ class UpdateUserController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid())
         {
-            
             $em->flush();
-
             $this->addFlash('success','Votre classe a été modifiée ');
-
-            return $this->redirectToRoute('list_classes');
-
             return $this->redirectToRoute('user_show',['id'=>$id]);
-
         }
 
         return $this->render('admin/user/update_user.html.twig', [

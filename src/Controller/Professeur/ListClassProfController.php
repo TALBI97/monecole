@@ -41,11 +41,8 @@ class ListClassProfController extends AbstractController
         {
             $this->addFlash('warning','La classe n\'existe pas');
 
-
             return $this->redirectToRoute('public_home');
         }
-
-
 
         return $this->render('professeur/list_user_eleve.html.twig',[
             'classe' => $classe

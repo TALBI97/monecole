@@ -18,12 +18,7 @@ class ShowEleveController extends AbstractController
      */
  public function show(int $id,BulteinRepository $bulteinRepository,UserRepository $userRepository)
     {   
-         $users = $userRepository->find($id);
-
-        // $form = $this->createForm(BulteinType::class);
-        // dd($form);
-        // $note=$users->getBultein()->getNote();
-        // $matiere=$users->getBultein()->getMatiere();
+        $users = $userRepository->find($id);
 
         $showUser = $bulteinRepository->findBy([
             'Eleve' =>$users

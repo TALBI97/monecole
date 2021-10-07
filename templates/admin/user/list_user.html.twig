@@ -29,7 +29,6 @@
                     <h5>{{users.getTotalItemCount}} Utilisateurs</h5>
                     {% for user in users %}
                         <tr>
-                        
                             <td>{{ user.lastName }}</td>
                             <td>{{ user.firstName }}</td>
                             <td>{{ user.datenaiss  | date('d-m-Y') }}</td>
@@ -37,18 +36,18 @@
                             <td>{{ user.email }}</td>
                             <td>{{ user.roles[0] }}</td>
                             <td class="text-center" >
-                                <a href="{{ path('user_show',{ 'id' : user.id }) }}" class=""><i class="fas fa-info-circle"></i>
+                                <a href="{{ path('user_show',{ 'id' : user.id }) }}" class="">
+                                    <i class="fas fa-info-circle"></i>
                                 </a>
                             </td>
                             <td class="text-center" >
-                                <a href="{{ path('delete_user',{ 'id' : user.id }) }}" class=""><i class="far fa-trash-alt"></i>
+                                <a href="{{ path('delete_user',{ 'id' : user.id }) }}" class="">
+                                    <i class="far fa-trash-alt"></i>
                                 </a>
                             </td>
-                        
                         </tr>
                     {% endfor %}
                     {{ knp_pagination_render(users) }}
-
                 </tbody>
                 
             </table>

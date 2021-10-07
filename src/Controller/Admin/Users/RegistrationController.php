@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin\Users;
 
 use App\Classe\Mail;
 use App\Entity\User;
@@ -11,11 +11,14 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class RegistrationController extends AbstractController
 {
     /**
      * @Route("/register", name="app_register")
+     * @IsGranted("ROLE_ADMIN")
      */
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder,ImageService $imageService): Response
     {

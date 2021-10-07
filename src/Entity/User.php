@@ -19,7 +19,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     public const ROLE_PROFESSEUR = "ROLE_PROFESSEUR";
     public const ROLE_ELEVE = "ROLE_ELEVE";
-    //  const ROLE_DEFAULT = 'ROLE_USER';
+
 
       const IMAGE_DEFAUT_PATH = '/images/defaut.jpg';
     /**

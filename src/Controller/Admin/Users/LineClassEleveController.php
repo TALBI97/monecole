@@ -37,8 +37,6 @@ class LineClassEleveController extends AbstractController
             $classe = $data->getIdClasse();
             $eleve = $data->getIdEleve();
 
-           
-            
             $eleveOccupe = $lineClassEleveRepository->findOneBy([
                'idEleve' => $eleve,
               

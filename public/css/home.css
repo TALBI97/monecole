@@ -10,13 +10,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* width: 80%; */
   height: 100vh;
   margin-bottom: 40px;
   background: linear-gradient(to right, #6b6b6a2c, rgba(209, 209, 209, 0.425)),
     url("../images/home2.jpg") no-repeat center/cover;
-
-  /* clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%); */
 }
 
 #carouselExampleIndicators {
@@ -53,6 +50,9 @@ body {
 
 .div-home {
   width: 50%;
+  text-align: end;
+  /* display: flex;
+  justify-content: end; */
 }
 .div-home,
 .div-home-oublie {
@@ -62,35 +62,29 @@ body {
   padding: 40px;
 }
 
-.para-home {
+.para-home,
+.para2-home,
+.para3-home {
   width: 40%;
-  margin: 0 auto;
   text-align: center;
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
   padding: 10px;
   border-radius: 20px;
+}
+
+.para-home {
+  margin: 0 auto;
   background: linear-gradient(to right, #008b8b, #96ded1);
-  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
   color: white;
 }
 .para2-home {
-  width: 40%;
-  text-align: center;
-  padding: 10px;
-  border-radius: 20px;
   background: linear-gradient(to right, #ffebcd, #faf0e6);
-  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
   color: #aacc00;
 }
 
 .para3-home {
-  width: 40%;
-  text-align: center;
   margin-left: auto;
-
-  padding: 10px;
-  border-radius: 20px;
   background: linear-gradient(to right, #ffebcd, #faf0e6);
-  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
   color: #aacc00;
 }
 
@@ -111,7 +105,6 @@ body {
 }
 
 .divHome {
-  /* width: 60%; */
   margin: 0 auto;
 }
 
@@ -139,11 +132,6 @@ h3 {
   border: none;
 }
 
-/* #formCnx input:focus,
-.bouton:focus {
-  outline: none !important;
-} */
-
 .btnConsulter {
   border-radius: 5px;
   background: #aacc00;
@@ -170,8 +158,4 @@ h3 {
 .btn:hover {
   font-size: 16px;
   color: #c5d7bd;
-}
-.divLogo {
-  /* background-color: red; */
-  /* background: linear-gradient(to right, #ffebcd, #faf0e6); */
 }

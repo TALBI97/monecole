@@ -12,33 +12,24 @@
 
             <div class="container pt-5 pb-5 main">
                 <div class="row ">
+                    
                     <div class="col-12">
-                        <h1 class="text-center">Mes eleves</h1>
-                    </div>
-                    <div class="col-12">
-                        <div class="card formulaire">
+                      <div class="card formulaire">
                                     
                             <div class="card-body container">
                     
                                 <div class="card-header">
-                                    <h2 class="text-center">Professeur {{ classe.instituteur.firstName }} {{ classe.instituteur.lastName }}</h2>
+
+                                <h1 class="text-center">Ma classe</h1>
+                                  
                                 </div>
-                                <div class="card-body">
+                                  <div class="card-body">
                                 
-                                    <h4 class="card-text text-center">Classe {{ classe.nom }}</h4>
-                                    <strong class="card-title ">Mes eleves </strong>
+                                  
                                     <div class="card-text mt-4">
-                                      
-                                        {% for eleve in classe.lineClassEleves %}
-                                            <ul class="d-flex justify-content-center">    
-                                           
-                                                <li>{{ eleve.idEleve.firstName }} {{ eleve.idEleve.lastName }}</li>
-
-                                                <li class=" text-center "><a href="{{ path('eleve_show',{ 'id' :eleve.idEleve.id }) }}" class=""><i class="fas fa-info-circle"></i></a></li>
-                                            </ul>
-
-
-                                        {% endfor %}
+                                        {% for eleve in idclasseeleve %}
+                                        <h2 class="text-center"> {{ eleve.idEleve.firstName }} {{ eleve.idEleve.lastName }}</h2>
+                                    {% endfor %}
                                        
                                     </div> 
                                 </div>

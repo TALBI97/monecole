@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg" id="navbar1">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar1">
   <a class="navbar-brand" href="/accueil" ><img src="images/logo.png" alt="" id="logo"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -26,6 +26,9 @@
             <li class="nav-item">
               <a class="lien" href="#">Espace eleves</a>
             </li>
+            <li class="nav-item">
+              <a class="lien" href="{{ path('ma_classe',{'id' : app.user.id }) }}">Ma classe</a>
+            </li>
           {% elseif app.user.roles[0] is same as "ROLE_PROFESSEUR" %}
             <li class="nav-item">
                   <a class="lien" href="{{ path('prof_show') }}">Espace professeur</a>
@@ -47,6 +50,7 @@
       </ul>
   </div>
 </nav>
+
 
 
 {# <nav class="navbar navbar-expand-lg" id="navbar1">

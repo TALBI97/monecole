@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\MotPasseOublie;
 use App\Entity\User;
 use App\Form\PasseOublieType;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -27,8 +28,9 @@ class MotPasseOublieController extends AbstractController
     /**
      * @Route("/mot-passe-oublie", name="passe_oublie")
      */
-    public function index(Request $request,MailerInterface $mailer): Response
+    public function index(Request $request,UserRepository $userRepository,MailerInterface $mailer): Response
     {
+
 
         if($this->getUser()){
             return $this->redirectToRoute('home');
@@ -49,8 +51,6 @@ class MotPasseOublieController extends AbstractController
             $url=$this->generateUrl('modifier_passe',[
                 'token'=>$passe_oublie->getToken()
             ]);
-
-            
 
             $content = "bonjour ".$user->getFirstName()."\n";
             $content .= "Merci de bien vouloir cliquer sur le lien suivant pour ";

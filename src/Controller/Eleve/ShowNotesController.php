@@ -37,8 +37,16 @@ class ShowNotesController extends AbstractController
         for ($j=0 ; $j <count($total ); $j++) { 
            $moyenne += $total[$j];
         }
+        // dd($moyenne);
+        if($moyenne == 0){
+            $this->addFlash('warning','Vous avez pas de bulletin a voir !');
+             return $this->redirectToRoute('accueil');
+        }
         $moyenne_total = $moyenne / count($total );
-
+        
+        // if($moyenne_total = 0){
+        //     
+        // }
         // dd($total);
         if(!$users)
         {

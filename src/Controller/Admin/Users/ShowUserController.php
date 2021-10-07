@@ -10,7 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ShowUserController extends AbstractController
 {
     /**
-     * @Route("user/{id}", name="user_show")
+     * @Route("admin/user/{id}", name="user_show")
      */
     public function show(string $id, UserRepository $userRepository)
     {

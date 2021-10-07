@@ -13,16 +13,14 @@ class DeleteUserController extends AbstractController
 {
     
     /**
-     * @Route("Admin/delete/{id}", name="delete_user")
+     * @Route("admin/delete/{id}", name="delete_user")
      */
 
-    public function deleteUser(UserRepository $userRepository,int $id,EntityManagerInterface $em,ClasseRepository $classeRepository): Response
+    public function deleteUser(UserRepository $userRepository,int $id,EntityManagerInterface $em): Response
     {
 
-
-        $user=$userRepository->find($id);
-        
-
+       $user=$userRepository->find($id);
+    
        $em->remove($user);
 
        $em->flush();
