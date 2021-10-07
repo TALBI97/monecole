@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Admin\Users;
+namespace App\Controller;
 
 use App\Classe\Mail;
 use App\Entity\User;

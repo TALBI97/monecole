@@ -14,7 +14,7 @@ class ListUserController extends AbstractController{
      * @Route("admin/user/list", name="list_users")
      */
 
-    public function list(UserRepository $productRepository,Request $request,PaginatorInterface $paginator)
+     public function list(UserRepository $productRepository,Request $request,PaginatorInterface $paginator)
     {
         $users=$productRepository->findAll();
 

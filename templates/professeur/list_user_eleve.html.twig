@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Ajouter Classe{% endblock %}
+{% block title %}Mes eleves{% endblock %}
 
 {% block body %}
 
@@ -26,7 +26,6 @@
                                 <div class="card-body">
                                 
                                     <h4 class="card-text text-center">Classe {{ classe.nom }}</h4>
-                                    <strong class="card-title ">Mes eleves </strong>
                                     <div class="card-text mt-4">
                                       
                                         {% for eleve in classe.lineClassEleves %}

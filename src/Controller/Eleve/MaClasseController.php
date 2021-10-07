@@ -22,48 +22,34 @@ class MaClasseController extends AbstractController
     /**
      * @Route("eleve/maClasse/{id}", name="ma_classe")
      */
- public function show(Request $request,int $id,UserRepository $userRepository,LineClassEleveRepository $lineClassEleveRepository,ClasseRepository $classeRepository):Response
+ public function show(LineClassEleveRepository $lineClassEleveRepository,ClasseRepository $classeRepository):Response
     {  
     
         $eleve = $this->getUser();
-        $user = $userRepository->findAll();
         $classe = $classeRepository->findAll();
         $allLineClasse = $lineClassEleveRepository->findAll();
-        //  dd($classe);
         $Idclasse=[];
         $classe = $lineClassEleveRepository->findby(['idEleve'=>$eleve]);
-        //dd($Idclasse);
         $Idclasse=0;
         $idclasseeleve=[];
-
-        
         $Idclasse = $classe[0]->getIdClasse()->getId();
         for ($i=0;$i<count($allLineClasse);$i++){
 
             if ($allLineClasse[$i]->getIdClasse()->getId() == $Idclasse){
-              
                 $idclasseeleve = $lineClassEleveRepository->findby(['idClasse'=>$Idclasse]);
-
             }
         }
-        // dd($idclasseeleve);
-         
-        
         if(!$eleve)
         {
             $this->addFlash('warning','Le eleve n\'existe pas');
    
              return $this->redirectToRoute('public_home');
         }
-
         if($eleve->getRoles()[0] !== User::ROLE_ELEVE){
             
-            $this->addFlash('warning','seul les prof peuvent acceder a cette page');
-            
+            $this->addFlash('warning','seul les eleves peuvent acceder a cette page');
             return $this->redirectToRoute('public_home');
         }
-
-
         if(!$classe)
         {
             $this->addFlash('warning','La classe n\'existe pas');
@@ -72,7 +58,6 @@ class MaClasseController extends AbstractController
         }
 
         return $this->render('eleve/maClasse.html.twig',[
-            // 'classe' => $classe,
             'idclasseeleve'=>$idclasseeleve
         ]);
 

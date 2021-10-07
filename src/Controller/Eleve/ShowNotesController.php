@@ -19,43 +19,31 @@ class ShowNotesController extends AbstractController
      */
  public function show(int $id,BulteinRepository $bulteinRepository,UserRepository $userRepository)
     {   
-         $users = $userRepository->find($id);
-
-        
+        $users = $userRepository->find($id);
         $showUser = $bulteinRepository->findBy([
             'Eleve' =>$users
         ]);
-
 
         $total=[];
         for ($i=0 ; $i <count($showUser ); $i++) { 
            $total[$i] = $showUser[$i]->getNote();
          
         }
-        // dd(array_sum($total));
         $moyenne=0;
         for ($j=0 ; $j <count($total ); $j++) { 
            $moyenne += $total[$j];
         }
-        // dd($moyenne);
         if($moyenne == 0){
             $this->addFlash('warning','Vous avez pas de bulletin a voir !');
              return $this->redirectToRoute('accueil');
         }
         $moyenne_total = $moyenne / count($total );
-        
-        // if($moyenne_total = 0){
-        //     
-        // }
-        // dd($total);
         if(!$users)
         {
             $this->addFlash('warning','cette classe n\'existe pas');
-   
              return $this->redirectToRoute('eleve_show');
         }
        
-      
         return $this->render('eleve/Bulletin.html.twig',[
             'users'=>$users,
             'showUser'=>$showUser,

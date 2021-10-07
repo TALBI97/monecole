@@ -31,7 +31,7 @@ class AjoutNotesController extends AbstractController
             
             $em->flush();
 
-            $this->addFlash('success','Votre bultein a été ajoutée '.$data->getId().'');
+            $this->addFlash('success','Votre notre a été créer');
 
             return $this->redirectToRoute('prof_show');
 

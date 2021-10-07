@@ -28,28 +28,18 @@
                             </thead>
                         
                             <tbody>
-                             
-                                    <tr>                                                                            
-                                         
+                                    <tr>                                                                                
                                         {% for show in showUser %}
 
                                             <tr>
                                                 <td>{{ show.matiere }} </td>
-                                                
                                                 <td>{{ show.note }} </td>
                                                 
                                             </tr>
                                         
                                         {% endfor %}
-
-
-                                       
                                     </tr>
-                                    
-                                     
-                                    <tr><td><strong>MOYENNE</strong></td><td>   <strong>{{moyenne}}</strong>/20  </td></tr>
-                                    
-
+                                    <tr><td><strong>MOYENNE</strong></td><td><strong>{{moyenne}}</strong>/20  </td></tr>
                             </tbody>
                             
                         </table>

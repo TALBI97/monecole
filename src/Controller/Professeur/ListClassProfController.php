@@ -21,26 +21,21 @@ class ListClassProfController extends AbstractController
         if(!$prof)
         {
             $this->addFlash('warning','Le professeur n\'existe pas');
-   
              return $this->redirectToRoute('public_home');
         }
-
         if($prof->getRoles()[0] !== User::ROLE_PROFESSEUR){
             
             $this->addFlash('warning','seul les prof peuvent acceder a cette page');
             
             return $this->redirectToRoute('public_home');
         }
-
         $classe = $classeRepository->findOneBy([
             'instituteur' => $prof
         ]);
-        // dd($classe);
 
         if(!$classe)
         {
             $this->addFlash('warning','La classe n\'existe pas');
-
             return $this->redirectToRoute('public_home');
         }
 

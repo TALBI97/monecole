@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Admin\Email;
+namespace App\Controller;
 
 use App\Form\EmailMessageType;
 use Hamcrest\Core\HasToString;

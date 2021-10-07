@@ -36,5 +36,8 @@ a:hover {
 }
 
 #logo {
-  width: 150px;
+  background: url("../images/logo.png") no-repeat center/cover;
+
+  width: 300px;
+  height: 60px;
 }

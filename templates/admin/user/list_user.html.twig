@@ -9,7 +9,7 @@
     <div class="row">
         
        <div  class="col-md-3"> {% include "shared/_sidebar.html.twig" %}</div>
-        
+       
        <div  class="col-md-9 divDroite"> 
        <h2 class="text-center"> Les utilisateurs</h2>
             <table class="col-9 mt-4" >
@@ -26,7 +26,7 @@
                 </thead>
             
                 <tbody>
-                    <h5>{{users.getTotalItemCount}} Utilisateurs</h5>
+                    <h5 class="text-center">{{users.getTotalItemCount}} Utilisateurs</h5>
                     {% for user in users %}
                         <tr>
                             <td>{{ user.lastName }}</td>
